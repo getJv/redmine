@@ -8,8 +8,9 @@ services:
       - "80:3000"
     environment:
       - REDMINE_DB_POSTGRES=postgres
-      - REDMINE_DB_USERNAME=redmine
+      - REDMINE_DB_USERNAME=postgres
       - REDMINE_DB_PASSWORD=secret
+      - REDMINE_DB_DATABASE=redmine
     links:
       - postgres
   postgres:
@@ -18,7 +19,8 @@ services:
     image: postgres
     environment:
       - POSTGRES_PASSWORD=secret
-      - POSTGRES_USER=redmine
+      - POSTGRES_USER=postgres
+      - POSTGRES_db=redmine
 
 
      
